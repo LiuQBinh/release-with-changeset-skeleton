@@ -26,7 +26,7 @@ Automated release workflow using [Changesets](https://github.com/changesets/chan
    - Select change type (patch/minor/major)
    - Add change description
 
-2. 💾 Commit and push bump files
+2. 💾 Commit and push your bump files
    - Required for PR approval
    - <span style="color: red">`check-bump-file` will block merge if missing</span>
 
