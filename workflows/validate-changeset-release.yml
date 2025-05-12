@@ -1,0 +1,22 @@
+name: Check bump file
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check if bump file exists
+        run: |
+          if [ ! -f bump.txt ]; then
+            echo "❌ bump.txt not found"
+            exit 1
+          else
+            echo "✅ bump.txt exists"
+          fi
