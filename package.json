@@ -1,6 +1,6 @@
 {
   "name": "release-with-changeset-skeleton",
-  "version": "1.0.0",
+  "version": "2.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,5 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.3"
+  }
 }
