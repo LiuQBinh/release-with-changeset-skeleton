@@ -18,7 +18,7 @@ Automated release workflow using [Changesets](https://github.com/changesets/chan
 
 ## Release Process
 
-### Development
+### Steps to development
 1. Create changeset:
    ```bash
    npx changeset add
@@ -28,7 +28,7 @@ Automated release workflow using [Changesets](https://github.com/changesets/chan
 
 2. Commit and push bump files
 
-### Release
+### Steps to release
 1. Create PR → `check-bump-file` verifies changesets
 2. Merge to main → `release` creates "Version Packages" PR
 3. Merge "Version Packages" PR → creates release
