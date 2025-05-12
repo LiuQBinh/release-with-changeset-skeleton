@@ -27,6 +27,8 @@ Automated release workflow using [Changesets](https://github.com/changesets/chan
    - Add change description
 
 2. Commit and push bump files
+   - Required for PR approval
+   - <span style="color: red">`check-bump-file` will block merge if missing</span>
 
 ### Steps to release
 1. Create PR → `check-bump-file` verifies changesets
