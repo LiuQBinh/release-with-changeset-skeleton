@@ -1,4 +1,4 @@
-name: Check bump file
+name: Check for Changeset Bump File
 
 on:
   pull_request:
@@ -6,17 +6,18 @@ on:
       - main
 
 jobs:
-  check-bump:
+  check-changeset:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check if bump file exists
+      - name: Check for .changeset/*.md files
         run: |
-          if [ ! -f bump.txt ]; then
-            echo "❌ bump.txt not found"
+          count=$(find ./.changeset -type f -name "*.md" | wc -l)
+          if [ "$count" -eq "0" ]; then
+            echo "❌ No bump file found in .changeset/"
             exit 1
           else
-            echo "✅ bump.txt exists"
+            echo "✅ Found $count bump file(s) in .changeset/"
           fi
