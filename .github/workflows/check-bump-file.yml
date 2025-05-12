@@ -1,0 +1,23 @@
+name: Check for Changeset Bump File (excluding README.md)
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-changeset:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check for .changeset/*.md excluding README.md
+        run: |
+          count=$(find ./.changeset -type f -name "*.md" ! -name "README.md" | wc -l)
+          if [ "$count" -eq "0" ]; then
+            echo "❌ No bump file found in .changeset/ (excluding README.md)"
+            exit 1
+          else
+            echo "✅ Found $count bump file(s) in .changeset/ (excluding README.md)"
+          fi
