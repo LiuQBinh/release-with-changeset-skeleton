@@ -29,6 +29,14 @@ Automated release workflow using [Changesets](https://github.com/changesets/chan
 2. 💾 Commit and push your bump files
    - Required for PR approval
    - <span style="color: red">`check-bump-file` will block merge if missing</span>
+   Example context of bump files:
+   ```markdown:.changeset/rare-coins-sneeze.md
+   ---
+   "release-with-changeset-skeleton": patch
+   ---
+   
+   Test
+   ```
 
 ### Steps to release
 1. 🔄 Create PR → `check-bump-file` verifies changesets
