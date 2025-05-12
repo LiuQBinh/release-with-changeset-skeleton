@@ -30,7 +30,7 @@ Automated release workflow using [Changesets](https://github.com/changesets/chan
    - Required for PR approval
    - <span style="color: red">`check-bump-file` will block merge if missing</span>
    
-   Example context of bump files:
+   Example content of bump files:
    ```markdown:.changeset/rare-coins-sneeze.md
    ---
    "release-with-changeset-skeleton": patch
